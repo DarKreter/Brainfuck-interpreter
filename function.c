@@ -42,3 +42,39 @@ char* Validate(int* argc, char** argv)
     // printf("%s\n", tab);
     return tab;
 }
+
+void SkipForward(char** program)
+{
+    int i = 0;
+    while(**program != 0) {
+        (*program)++;
+        // printf("-%c\n", **program);
+        if((**program) == '[')
+            i++;
+        else if((**program) == ']') {
+            if(i > 0)
+                i--;
+            else
+                break;
+        }
+    }
+    return;
+}
+
+void SkipBack(char** program, char* limit)
+{
+    int i = 0;
+    while(*program != limit) {
+        (*program)--;
+        // printf("-%c\n", **program);
+        if((**program) == ']')
+            i++;
+        else if((**program) == '[') {
+            if(i > 0)
+                i--;
+            else
+                break;
+        }
+    }
+    return;
+}
