@@ -2,6 +2,11 @@
 
 int main(int argc, char* argv[])
 {
-    Validate(&argc, argv);
+    char* program = Validate(&argc, argv);
+
+    while(*program != 0) {
+        printf("%c ", *(program++));
+    }
+
     return 0;
 }
