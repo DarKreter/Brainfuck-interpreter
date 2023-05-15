@@ -63,7 +63,6 @@ int main(int argc, char* argv[])
             // condition of the loop
             move_on = 0;
             // printf("se %c\n", *program);
-            // scanf("LOL:%c");
             break;
         case ' ':
         case '\n':
